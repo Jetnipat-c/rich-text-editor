@@ -14,8 +14,9 @@ export default function Home() {
  
   return (
     <div className={styles.container}>
+      <div style={{textAlign:"center"}}>{content}</div>
+      
       <Content content={content} />
-      <p> My Other Contents </p>
       <SunEditor
         // setContents="My contents"
         onChange={handleChange}
@@ -38,6 +39,7 @@ export default function Home() {
           ]
         }}
       />
+      test
     </div>
   )
 }
