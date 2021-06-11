@@ -1,17 +1,20 @@
 import styles from '../styles/Home.module.css'
 import 'suneditor/dist/css/suneditor.min.css';
-import React from 'react';
+import React, { useState } from 'react';
 import dynamic from "next/dynamic";
+import Content from '../components/Contetnt';
 const SunEditor = dynamic(() => import("suneditor-react"), {
   ssr: false,
 });
 export default function Home() {
-  const handleChange = (event: any) => {
-    console.log(event);  
+  const [content,setContent] = useState("")
+  const handleChange = (event: any) => { 
+    setContent(event)
   }
  
   return (
     <div className={styles.container}>
+      <Content content={content} />
       <p> My Other Contents </p>
       <SunEditor
         // setContents="My contents"
